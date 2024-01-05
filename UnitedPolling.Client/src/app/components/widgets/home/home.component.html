@@ -1,0 +1,52 @@
+﻿<div>
+	<div style="display:inline-block; width: 19.5%; margin-right: 0.5%; margin-bottom: 0.5%;">
+		<div style="box-shadow: 0 1px 5px rgb(0 0 0 / 5%);
+		padding: 1.15vw 1.6vw;
+		border-radius: .5vw;
+		background-color: white;
+		color: #424142;
+		font-size: .8vw;
+		font-weight: 500;">
+			<div style=" vertical-align: top; width: 70%; margin-bottom: 1.5vw;">
+				<div style="font-size: 1.2vw; font-weight: 650; width: 100%;">
+					<img [src]="'/assets/history.png'" style="width: 1.05vw; display: inline-block; margin-right: 2%;">
+					<div style="display: inline-block;">Feed</div>
+				</div>
+				<div style="margin-bottom: .5vw; color: #808080;">For {{helper.addDays(currentDate, -13) | date:'dd/MM/yyyy'}} - {{ currentDate | date:'dd/MM/yyyy'}}</div>
+				<div>
+					News you can use.
+				</div>
+			</div>
+		</div>
+	</div>
+	<div style="vertical-align: top; display:inline-block; width: 79.5%; margin-bottom: 0.5%;">
+		<div style="box-shadow: 0 1px 5px rgb(0 0 0 / 5%);
+		padding: 1.15vw 1.6vw;
+		border-radius: .5vw;
+		background-color: white;
+		color: #424142;
+		font-size: .8vw;
+		font-weight: 500;">
+			<div style="vertical-align: top; width: 100%; margin-bottom: 2%;">
+				<div>
+					<div style="display: inline-block; font-size: 1.2vw; font-weight: 650; margin-bottom: .3vw; margin-right: .35vw;">
+						<img [src]="'/assets/shapes.png'" style="width: 1.05vw; display: inline-block; margin-right: .25vw;vertical-align: middle; padding-bottom: .25vw;">
+						<div style="display: inline-block;">Polls</div>
+					</div>
+					<div style="display: inline-block;">
+						<a (click)="createPollOnClick($event)" href="#" style="color: #00bbcc; font-size: .70vw; font-weight: 400;  text-decoration: none; ">(Add New)</a>
+					</div>
+				</div>
+				<ng-container *ngIf="pollLoaded">
+					<div *ngFor="let p of pollData">
+						<hr/>
+						<div>Poll: {{p.title}}</div>
+						<div>Author: {{p.createdUserName}}</div>
+						<div>Updated: {{p.updatedDateTime.substring(0,10)}}</div>
+						<div>Url Shareable: {{p.urlShareable ? "Yes" : "No"}}</div>
+					</div>
+				</ng-container>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,8 @@
+{
+	"debugMode": true,
+	"dashboardRefreshTimer": 300000,
+
+	"pictureUploadWidth": 1920,
+	"pictureUploadHeight": 1080,
+	"pictureUploadQuality": 0.7
+}

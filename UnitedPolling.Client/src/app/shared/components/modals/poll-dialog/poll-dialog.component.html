@@ -1,0 +1,40 @@
+<div style="margin: 1.25vw 1vw;">
+	<div style="font-size: .85vw; padding-left: .35vw; padding-right: .35vw;  padding-bottom: .5%; width: 18vw;">
+		<div>
+			<div style="font-weight: 500; font-size: 1.1vw; width: 50%; display: inline-block;">New Poll</div>
+			<div style="width: 50%; display: inline-block; text-align: right; font-size: 1.04vw; font-weight: 350;">
+				<a href="#" (click)="cancelClicked($event)" style="color: #468FB9; text-decoration: none;">X</a>
+			</div>
+		</div>
+		<form ngForm #form="ngForm" class="form">
+			<div class="form-group">
+				<table style="width: 100%; line-height: 2.5vw; margin-top: .2vw;">
+					<tr style="color: #7a7a7a;">
+						<div style="margin-top: .35vw; display: inline-block; margin-right: .5vw;">Title: </div>
+						<div style="width: 80%; display: inline-block;">
+							<input maxlength="50" style="background-color: #F6F5F7; border: 0px; border-radius: .2vw; width: 100%; height: 2vw; padding-left: 5%; font-weight: 500;" placeholder="Enter name"  (input)="onChangeName($event)"  />
+						</div>
+					</tr>
+					<tr>
+						<td>
+							<div style="display: inline-block; vertical-align: middle; margin-right: .2vw;">Url Shareable:</div>
+							<input _ngcontent-ng-cli-universal-c1="" style="width: 1.15vw; height: 1.15vw; display: inline-block; vertical-align: middle;" type="checkbox" (change)="onChangeUrlShareable($event.target)" [checked]="urlShareable">
+						</td>
+					</tr>
+				</table>
+				<ng-container *ngIf="displayPollCreationError">
+					<div style="width: 100%; color: red; font-weight: 400; font-size: .8vw; line-height: 1vw;">Failed to create poll.</div>
+				</ng-container>
+			</div>
+		</form>
+		
+		<div class="buttons-container" style="margin-top: .1vw; width: 100%; text-align: right;">
+			<ng-container *ngIf="pageOneComplete">
+				<button _ngcontent-ng-cli-universal-c1="" mat-stroked-button="" (click)="save()" style="width: 48.5%; background-color: #2365B0; color: #ffffff; border-radius: 1.2vw; height: 2.5vw; font-weight: 500; font-size: .9vw;">SEND</button>
+			</ng-container>
+			<ng-container *ngIf="!pageOneComplete">
+				<button disabled style="width: 48.5%; background-color: #ffffff; border: .07vw solid #CCCCCC; color: #CCCCCC; border-radius: 1.2vw; height: 2.5vw; font-weight: 500; font-size: .9vw;">SEND</button>
+			</ng-container>
+		</div>
+	</div>
+</div>

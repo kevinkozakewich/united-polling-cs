@@ -1,0 +1,6 @@
+@UnitedPolling.Server_HostAddress = http://localhost:5222
+
+GET {{UnitedPolling.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

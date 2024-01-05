@@ -1,0 +1,23 @@
+﻿<header style="height: 2.75vw; background-color: white; 
+	box-shadow: 0 1px 8px rgb(0 0 0 / 0.1); padding-left: 1.25%; padding-right: 1.25%; padding-top: .15%; vertical-align: bottom; line-height: 1.5vw;">
+	<div style="width: 50%; display: inline-block;">
+		<a href="home" style="width: 100%;">
+			<img style="display: inline-block; vertical-align: bottom; max-height: 1.5vw;" src="assets/growth-blue.png">
+			<div style="display: inline-block; color: #468FB9; font-size: 1vw; display: inline-block; font-weight: 650; margin-left: .35vw; vertical-align: middle;">United Polling</div>
+		</a>
+	</div>
+	<div style="display: inline-block; vertical-align: bottom; margin-top: .55%; width: 50%; text-align: right; font-weight: 600">
+		<ng-container *ngIf="!loggedIn">
+			<a (click)="login($event)" href="#" style="display: inline-block;  vertical-align: middle; width: 100%;">
+				<img style="width: 1vw; vertical-align: middle; margin-right: .35vw;" src="/assets/settings.png">
+				<div style="color: #468FB9; display: inline-block; font-size: 1vw;vertical-align:middle;">Login</div>
+			</a>
+		</ng-container>
+		<ng-container *ngIf="loggedIn">
+			<a (click)="logout($event)" href="#" style="display: inline-block;  vertical-align: middle; width: 100%;">
+				<div style="color: #468FB9; display: inline-block; font-size: 1vw;vertical-align:middle; margin-right: .35vw;">{{loginName.length > 0 ? loginName : "Logout"}}</div>
+				<img style="width: 1vw; vertical-align: middle;" src="/assets/settings.png">
+			</a>
+		</ng-container>
+	</div>
+</header>
